@@ -1,0 +1,126 @@
+.page {
+  min-height: 100vh;
+  background-color: #f7f9fa;
+}
+
+.mainContent {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 2rem;
+}
+
+.sidebar {
+  height: fit-content;
+}
+
+.mainPanel {
+  background: white;
+  border: 1px solid #e1e8ed;
+  border-radius: 8px;
+  padding: 1.5rem;
+}
+
+.panelHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #e1e8ed;
+}
+
+.panelTitle {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #14171a;
+}
+
+.showAllButton {
+  padding: 0.5rem 1rem;
+  background-color: #1da1f2;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.showAllButton:hover {
+  background-color: #1a91da;
+}
+
+.showAllButton:focus {
+  outline: 2px solid #1da1f2;
+  outline-offset: 2px;
+}
+
+.loading {
+  text-align: center;
+  padding: 3rem 1rem;
+  color: #657786;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #e1e8ed;
+}
+
+.paginationButton {
+  padding: 0.5rem 1rem;
+  background-color: #1da1f2;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.paginationButton:hover:not(:disabled) {
+  background-color: #1a91da;
+}
+
+.paginationButton:disabled {
+  background-color: #e1e8ed;
+  color: #657786;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.paginationButton:focus {
+  outline: 2px solid #1da1f2;
+  outline-offset: 2px;
+}
+
+.pageNumber {
+  font-size: 0.95rem;
+  color: #14171a;
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .mainContent {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .sidebar {
+    order: 2;
+  }
+  
+  .mainPanel {
+    order: 1;
+  }
+}

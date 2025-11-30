@@ -1,0 +1,50 @@
+.card {
+  background: white;
+  border: 1px solid #e1e8ed;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 0.75rem;
+  transition: box-shadow 0.2s;
+}
+
+.card:hover {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.author {
+  margin: 0;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #1da1f2;
+}
+
+.date {
+  font-size: 0.85rem;
+  color: #657786;
+}
+
+.content {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #14171a;
+  word-wrap: break-word;
+}
+
+.deleted {
+  background-color: #f7f9fa;
+  border-color: #ccd6dd;
+}
+
+.deletedText {
+  color: #657786;
+  font-style: italic;
+  margin: 0;
+}

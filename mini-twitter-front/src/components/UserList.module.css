@@ -1,0 +1,64 @@
+.container {
+  background: white;
+  border: 1px solid #e1e8ed;
+  border-radius: 8px;
+  padding: 1rem;
+  height: fit-content;
+  position: sticky;
+  top: 1rem;
+}
+
+.title {
+  margin: 0 0 1rem 0;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #14171a;
+}
+
+.userList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.userList li {
+  margin-bottom: 0.5rem;
+}
+
+.userButton {
+  width: 100%;
+  padding: 0.75rem;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.userButton:hover {
+  background-color: #f7f9fa;
+  border-color: #e1e8ed;
+}
+
+.userButton:focus {
+  outline: 2px solid #1da1f2;
+  outline-offset: 2px;
+}
+
+.userButton.selected {
+  background-color: #e8f5fe;
+  border-color: #1da1f2;
+}
+
+.username {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #1da1f2;
+}
+
+.empty {
+  text-align: center;
+  padding: 2rem 1rem;
+  color: #657786;
+}

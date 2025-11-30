@@ -1,0 +1,55 @@
+.container {
+  width: 100%;
+}
+
+.tweetList {
+  margin-bottom: 1.5rem;
+}
+
+.empty {
+  text-align: center;
+  padding: 3rem 1rem;
+  color: #657786;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.paginationButton {
+  padding: 0.5rem 1rem;
+  background-color: #1da1f2;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.paginationButton:hover:not(:disabled) {
+  background-color: #1a91da;
+}
+
+.paginationButton:disabled {
+  background-color: #ccd6dd;
+  color: #657786;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.paginationButton:focus {
+  outline: 2px solid #1da1f2;
+  outline-offset: 2px;
+}
+
+.pageNumber {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #14171a;
+}

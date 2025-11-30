@@ -1,0 +1,139 @@
+.container {
+  background: white;
+  border: 1px solid #e1e8ed;
+  border-radius: 8px;
+  padding: 1.5rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.title {
+  margin: 0 0 1.5rem 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #14171a;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.label {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #14171a;
+}
+
+.input,
+.textarea {
+  padding: 0.75rem;
+  border: 1px solid #ccd6dd;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-family: inherit;
+  transition: border-color 0.2s;
+}
+
+.input:focus,
+.textarea:focus {
+  outline: none;
+  border-color: #1da1f2;
+  box-shadow: 0 0 0 2px rgba(29, 161, 242, 0.1);
+}
+
+.textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.textarea:disabled {
+  background-color: #f5f8fa;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.hint {
+  font-size: 0.85rem;
+  color: #657786;
+  margin: 0;
+  transition: color 0.2s;
+}
+
+.hintError {
+  color: #e0245e;
+  font-weight: 600;
+}
+
+.submitButton {
+  padding: 0.75rem 1.5rem;
+  background-color: #1da1f2;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.2s, opacity 0.2s;
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-width: 150px;
+  justify-content: center;
+}
+
+.submitButton:hover:not(:disabled) {
+  background-color: #1a91da;
+}
+
+.submitButton:disabled {
+  background-color: #ccd6dd;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.submitButton:focus {
+  outline: 2px solid #1da1f2;
+  outline-offset: 2px;
+}
+
+.error {
+  padding: 0.75rem;
+  background-color: #ffebee;
+  border: 1px solid #ef5350;
+  border-radius: 8px;
+  color: #c62828;
+  font-size: 0.9rem;
+}
+
+.success {
+  padding: 0.75rem;
+  background-color: #e8f5e9;
+  border: 1px solid #66bb6a;
+  border-radius: 8px;
+  color: #2e7d32;
+  font-size: 0.9rem;
+}

@@ -1,0 +1,55 @@
+/**
+ * Estilos globales de la aplicación
+ * Se aplican a nivel raíz sin afectar la modularidad
+ */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* Colores principales */
+  --color-primary: #1da1f2;
+  --color-primary-dark: #1a91da;
+  --color-text: #14171a;
+  --color-text-secondary: #657786;
+  --color-border: #e1e8ed;
+  --color-bg: #f7f9fa;
+  --color-white: #ffffff;
+  --color-background-hover: #f5f8fa;
+  
+  /* Fuentes */
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.6;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+button {
+  font-family: inherit;
+}
+
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}

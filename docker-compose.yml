@@ -1,0 +1,71 @@
+services:
+  keycloak:
+    image: quay.io/keycloak/keycloak:25.0.2
+    container_name: minitwitter-keycloak
+    hostname: minitwitter-keycloak
+    environment:
+      KEYCLOAK_ADMIN: admin
+      KEYCLOAK_ADMIN_PASSWORD: admin
+      DB_VENDOR: h2
+      KC_FEATURES: scripts
+      KC_HEALTH_ENABLED: true
+      KC_HTTP_MANAGEMENT_PORT: 9990
+
+      # rabbit (solo si vas a usar el listener hacia RabbitMQ)
+      KK_TO_RMQ_URL: rabbit
+      KK_TO_RMQ_VHOST: ${RABBITMQ_DEFAULT_VHOST}
+      KK_TO_RMQ_EXCHANGE: ${KK_TO_RMQ_EXCHANGE}
+      KK_TO_RMQ_USERNAME: ${RABBITMQ_DEFAULT_USER}
+      KK_TO_RMQ_PASSWORD: ${RABBITMQ_DEFAULT_PASS}
+
+    ports:
+      - "9090:8080"
+
+    volumes:
+      # acá usás tu realm renombrado a minitwitter
+      - ./keycloak/realm-export.json:/opt/keycloak/data/import/realm-export.json
+      # y el jar del listener
+      - ./keycloak/keycloak-to-rabbit-3.0.5.jar:/opt/keycloak/providers/keycloak-to-rabbit-3.0.5.jar
+
+    command: start-dev --import-realm
+
+    healthcheck:
+      test:
+        [
+          "CMD-SHELL",
+          "exec 3<>/dev/tcp/127.0.0.1/9990;echo -e 'GET /health/ready HTTP/1.1\r\nhost: http://localhost\r\nConnection: close\r\n\r\n' >&3;if [ $? -eq 0 ]; then echo 'Healthcheck Successful';exit 0;else echo 'Healthcheck Failed';exit 1;fi;",
+        ]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  tpindividual:
+    build:
+      context: ./tpindividual
+      dockerfile: Dockerfile
+    container_name: minitwitter-app
+    hostname: minitwitter-app
+    environment:
+      # NO activar profile dev para que valide OAuth2
+      # SPRING_PROFILES_ACTIVE: dev
+      # Variables de Spring Boot: el issuer debe coincidir con el del token del frontend
+      # El frontend usa localhost:9090, así que el backend debe validar ese issuer
+      SPRING_SECURITY_OAUTH2_RESOURCESERVER_JWT_ISSUER_URI: http://localhost:9090/realms/minitwitter
+      SPRING_SECURITY_OAUTH2_RESOURCESERVER_JWT_JWK_SET_URI: http://minitwitter-keycloak:8080/realms/minitwitter/protocol/openid-connect/certs
+    ports:
+      - "8080:8080"
+    depends_on:
+      keycloak:
+        condition: service_healthy
+
+  mini-twitter-front:
+    build:
+      context: ./mini-twitter-front
+      dockerfile: Dockerfile
+    container_name: minitwitter-frontend
+    hostname: minitwitter-frontend
+    ports:
+      - "3000:80"
+    depends_on:
+      - tpindividual
+      - keycloak

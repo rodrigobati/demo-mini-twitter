@@ -1,0 +1,305 @@
+.card {
+  background: white;
+  border: 1px solid #e1e8ed;
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 12px;
+  transition: box-shadow 0.2s;
+}
+
+.card:hover {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card.deleted {
+  opacity: 0.6;
+  background: #f7f9fa;
+}
+
+.retweetBadge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 12px;
+  padding: 6px 0;
+  color: #657786;
+  font-size: 13px;
+}
+
+.retweetIcon {
+  font-size: 14px;
+}
+
+.retweetText {
+  font-weight: 500;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.authorInfo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.author {
+  font-weight: 600;
+  color: #14171a;
+  font-size: 15px;
+}
+
+.authorId {
+  color: #657786;
+  font-size: 12px;
+}
+
+.separator {
+  color: #657786;
+}
+
+.date {
+  color: #657786;
+  font-size: 14px;
+}
+
+.followBtn {
+  background: #1da1f2;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 6px 16px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.followBtn:hover:not(:disabled) {
+  background: #1a91da;
+}
+
+.followBtn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.content {
+  margin-bottom: 12px;
+}
+
+.text {
+  color: #14171a;
+  font-size: 15px;
+  line-height: 1.5;
+  margin: 0;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+.deletedBadge {
+  display: inline-block;
+  background: #ff6b6b;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 600;
+  margin-top: 8px;
+}
+
+.actions {
+  display: flex;
+  gap: 48px;
+  padding-top: 8px;
+  border-top: 1px solid #e1e8ed;
+}
+
+.actionBtn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: none;
+  border: none;
+  color: #657786;
+  font-size: 14px;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 4px;
+  transition: all 0.2s;
+}
+
+.actionBtn:hover:not(:disabled) {
+  background: #f7f9fa;
+  color: #1da1f2;
+}
+
+.actionBtn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.actionBtn.liked {
+  color: #e0245e;
+}
+
+.actionBtn.error {
+  border-color: #f4212e;
+  color: #f4212e;
+}
+
+.icon {
+  font-size: 18px;
+}
+
+.count {
+  font-weight: 500;
+  min-width: 20px;
+  text-align: left;
+}
+
+.errorText {
+  font-size: 11px;
+  color: #f4212e;
+  margin-left: 4px;
+}
+
+/* Respuestas */
+.respuestasSection {
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid #e1e8ed;
+}
+
+.respuestaForm {
+  margin-bottom: 16px;
+}
+
+.respuestaInput {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #e1e8ed;
+  border-radius: 8px;
+  font-size: 14px;
+  font-family: inherit;
+  resize: vertical;
+  transition: border-color 0.2s;
+}
+
+.respuestaInput:focus {
+  outline: none;
+  border-color: #1da1f2;
+}
+
+.respuestaInput:disabled {
+  background: #f7f9fa;
+  cursor: not-allowed;
+}
+
+.respuestaFormActions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 8px;
+}
+
+.charCount {
+  font-size: 12px;
+  color: #657786;
+}
+
+.respuestaSubmit {
+  background: #1da1f2;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.respuestaSubmit:hover:not(:disabled) {
+  background: #1a91da;
+}
+
+.respuestaSubmit:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.respuestasList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.respuestaItem {
+  background: #f7f9fa;
+  padding: 12px;
+  border-radius: 8px;
+  transition: background 0.2s;
+}
+
+.respuestaItem:hover {
+  background: #eef2f4;
+}
+
+.respuestaItem.deleted {
+  opacity: 0.6;
+}
+
+.respuestaHeader {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.respuestaAutor {
+  font-weight: 600;
+  font-size: 14px;
+  color: #14171a;
+}
+
+.respuestaDate {
+  font-size: 13px;
+  color: #657786;
+}
+
+.deleteRespuestaBtn {
+  margin-left: auto;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  opacity: 0.6;
+  transition: opacity 0.2s;
+}
+
+.deleteRespuestaBtn:hover {
+  opacity: 1;
+}
+
+.respuestaContenido {
+  color: #14171a;
+  font-size: 14px;
+  line-height: 1.4;
+  margin: 0;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+.noRespuestas {
+  color: #657786;
+  font-size: 14px;
+  text-align: center;
+  padding: 16px;
+  margin: 0;
+}

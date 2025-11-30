@@ -1,0 +1,40 @@
+.button {
+  border: none;
+  border-radius: 20px;
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  min-width: 100px;
+}
+
+.button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.seguir {
+  background: #1da1f2;
+  color: white;
+}
+
+.seguir:hover:not(:disabled) {
+  background: #1a91da;
+}
+
+.siguiendo {
+  background: white;
+  color: #1da1f2;
+  border: 1px solid #1da1f2;
+}
+
+.siguiendo:hover:not(:disabled) {
+  background: #ffebee;
+  color: #e0245e;
+  border-color: #e0245e;
+}
+
+.siguiendo:hover:not(:disabled)::after {
+  content: ' Dejar de seguir';
+}

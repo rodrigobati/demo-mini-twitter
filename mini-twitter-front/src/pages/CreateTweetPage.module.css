@@ -1,0 +1,10 @@
+.page {
+  min-height: 100vh;
+  background-color: #f7f9fa;
+}
+
+.mainContent {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
