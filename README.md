@@ -7,8 +7,7 @@ Sistema de micro-blogging estilo Twitter con autenticación mediante Keycloak. P
 1. **Clonar el repositorio:**
 
    ```bash
-   git clone <url-del-repo>
-   cd Proyecto\ TP\ individual
+   https://github.com/rodrigobati/demo-mini-twitter.git
    ```
 
 2. **Levantar todos los servicios:**
